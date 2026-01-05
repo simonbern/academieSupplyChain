@@ -446,6 +446,66 @@
             });
         }
     });
+
+    // Form submission - CRM integration placeholder
+    document.querySelector('.survey-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Collect form data
+        const formData = {
+            prenom: document.getElementById('prenom').value,
+            nom: document.getElementById('nom').value,
+            telephone: document.getElementById('telephone').value,
+            email: document.getElementById('email').value,
+            age: document.getElementById('age').value
+        };
+        
+        console.log('Form data:', formData); // For testing
+        
+        // TODO: REPLACE THIS SECTION WITH CRM INTEGRATION
+        // When client has GoHighLevel or other CRM:
+        // 1. Get webhook URL from CRM
+        // 2. Uncomment and update the fetch code below
+        // 3. Remove the temporary alert
+        
+        /*
+        try {
+            const response = await fetch('PASTE_WEBHOOK_URL_HERE', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+            
+            if (response.ok) {
+                alert('Merci! Votre formulaire a été soumis avec succès.');
+                this.reset();
+            } else {
+                alert('Erreur lors de la soumission. Veuillez réessayer.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Erreur de connexion. Veuillez réessayer.');
+        }
+        */
+        
+        // TEMPORARY: Remove this when CRM is connected
+        alert('Merci! Votre formulaire a été soumis avec succès.');
+        this.reset();
+    });
+    ```
+
+    **Instructions for later (add as a comment in your code or separate doc):**
+    ```
+    /*INSTRUCTIONS FOR CRM INTEGRATION:
+    1. Client creates webhook in their CRM (GoHighLevel, HubSpot, etc.)
+    2. Copy the webhook URL
+    3. In the JavaScript code, uncomment the fetch block
+    4. Replace 'PASTE_WEBHOOK_URL_HERE' with actual webhook URL
+    5. Remove the temporary alert at the bottom
+    6. Test the form to confirm data reaches CRM
+    */
 </script>
 </body>
 </html>
